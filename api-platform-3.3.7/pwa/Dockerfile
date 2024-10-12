@@ -31,7 +31,7 @@ EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME localhost
 
-CMD ["sh", "-c", "pnpm install; pnpm dev"]
+CMD ["sh", "-c", "pnpm install && pnpm add -D @types/react @types/react-dom tailwindcss postcss autoprefixer && pnpm dev"]
 
 
 FROM base AS builder

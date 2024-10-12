@@ -1,11 +1,13 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState } from "react"
+import NavBar from "./navbar"
+import Footer from "./footer"
+
 import {
   DehydratedState,
   Hydrate,
   QueryClient,
   QueryClientProvider,
 } from "react-query";
-
 const Layout = ({
   children,
   dehydratedState,
@@ -17,7 +19,11 @@ const Layout = ({
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Hydrate state={dehydratedState}>{children}</Hydrate>
+      <div className="flex flex-col w-full min-h-screen bg-beige-500">
+        <NavBar />
+        <Hydrate  state={dehydratedState}>{children}</Hydrate>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 };

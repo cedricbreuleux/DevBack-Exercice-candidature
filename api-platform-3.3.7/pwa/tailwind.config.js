@@ -8,6 +8,11 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", "system-ui"],
+        CrimsonTextItalic: ['CrimsonText-Italic', 'serif'],
+        CrimsonTextSemiBoldItalic: ['CrimsonText-SemiBoldItalic', 'serif'],
+        CrimsonTextRegular: ['CrimsonText-Regular', 'serif'],
+
+
       },
       boxShadow: {
         card: "0px 0px 20px 0px rgba(0, 0, 0, 0.15)",
@@ -23,6 +28,10 @@ module.exports = {
           500: "#46b6bf",
           700: "#0f929a",
           200: "#bceff3"
+        },
+        beige: {
+          500:'#e7e1d7',
+          700: '#d7baa3'
         },
         red: {
           500: "#ee4322"
