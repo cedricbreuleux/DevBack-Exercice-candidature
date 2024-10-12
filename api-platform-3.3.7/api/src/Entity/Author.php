@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\AuthorRepository;
@@ -9,6 +11,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ApiResource(mercure: true)]
+#[ApiFilter(SearchFilter::class, properties: ['lastName' => 'partial'])]
 #[ORM\Entity(repositoryClass: AuthorRepository::class)]
 class Author
 {

@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Doctrine\Orm\Filter\DateFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Metadata\ApiFilter;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\BookRepository;
@@ -10,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Author;
 
 #[ApiResource(mercure: true, normalizationContext: ['groups' => ['book:read']])]
+#[ApiFilter(SearchFilter::class, properties: ['title' => 'partial'])]
+#[ApiFilter(DateFilter::class, properties: ['publishedAt'])]
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book
 {
