@@ -27,7 +27,7 @@ class Book
     #[Groups(['book:read'])]
     private ?string $summary = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     #[Groups(['book:read'])]
     private ?\DateTimeInterface $publishedAt = null;
 
