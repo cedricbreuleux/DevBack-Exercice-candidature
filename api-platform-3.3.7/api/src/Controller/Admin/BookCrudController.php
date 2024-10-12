@@ -19,16 +19,26 @@ class BookCrudController extends AbstractCrudController
     }
 
     public function configureFields(string $pageName): iterable
-    {
+    {   
+        
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('title'),
             TextEditorField::new('summary'),
             DateField::new('publishedAt'),
             AssociationField::new('author'),
-            TextField::new('createdBy'),
-            DateTimeField::new('createdAt'),
-            DateTimeField::new('updatedAt'),
+            TextField::new('createdBy')->hideOnForm(),
+            DateTimeField::new('createdAt')->hideOnForm(),
+            DateTimeField::new('updatedAt')->hideOnForm(),
         ];
+    }
+    public function createEntity(string $entityFqcn)
+    {   
+        $admin = $this->getUser();
+
+        $book = new Book();
+        $book->setCreatedBy($admin->getUserIdentifier());
+
+        return $book;
     }
 }
