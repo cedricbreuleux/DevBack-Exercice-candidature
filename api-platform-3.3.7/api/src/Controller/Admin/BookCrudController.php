@@ -23,13 +23,13 @@ class BookCrudController extends AbstractCrudController
         
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('title'),
-            TextEditorField::new('summary'),
-            DateField::new('publishedAt'),
-            AssociationField::new('author'),
-            TextField::new('createdBy')->hideOnForm(),
-            DateTimeField::new('createdAt')->hideOnForm(),
-            DateTimeField::new('updatedAt')->hideOnForm(),
+            TextField::new('title')->setLabel('Titre'),
+            TextEditorField::new('summary')->setLabel('Résumé'),
+            DateField::new('publishedAt')->setLabel('Date de publication'),
+            AssociationField::new('author')->setLabel('Auteur'),
+            TextField::new('createdBy')->setLabel('Utilisateur créateur')->hideOnForm(),
+            DateTimeField::new('createdAt')->setLabel('Date de création')->hideOnForm(),
+            DateTimeField::new('updatedAt')->setLabel('Date de mise à jour')->hideOnForm(),
         ];
     }
     public function createEntity(string $entityFqcn)

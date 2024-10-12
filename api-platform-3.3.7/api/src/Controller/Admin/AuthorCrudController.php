@@ -22,13 +22,13 @@ class AuthorCrudController extends AbstractCrudController
         $user = $this->getUser();
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('firstName'),
-            TextField::new('lastName'),
-            DateField::new('birthDate'),
-            TextField::new('nationality'),
-            TextField::new('createdBy')->hideOnForm(),
-            DateTimeField::new('createdAt')->hideOnForm(),
-            DateTimeField::new('updatedAt')->hideOnForm(),
+            TextField::new('firstName')->setLabel('Prénom'),
+            TextField::new('lastName')->setLabel('Nom'),
+            DateField::new('birthDate')->setLabel('Date de naissance'),
+            TextField::new('nationality')->setLabel('Nationalité'),
+            TextField::new('createdBy')->setLabel('Utilisateur créateur')->hideOnForm(),
+            DateTimeField::new('createdAt')->setLabel('Date de création')->hideOnForm(),
+            DateTimeField::new('updatedAt')->setLabel('Date de mise à jour')->hideOnForm(),
         ];
     }
     public function createEntity(string $entityFqcn)
