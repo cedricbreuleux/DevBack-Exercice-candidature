@@ -49,21 +49,21 @@ function Author() {
                             authors.map((author) => (
                                 <div
                                     key={author.id}
-                                    className="flex flex-col w-72 h-80 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                                    className="flex flex-col w-72 h-80 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow"
                                 >
                                     <a href="#">
-                                        <h5 className="font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        <h5 className="font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                             {author.firstName +
                                                 " " +
                                                 author.lastName}
                                         </h5>
                                     </a>
                                     {author.nationality ? (
-                                        <p className="overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                        <p className="overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700">
                                             Nationalité : {author.nationality}
                                         </p>
                                     ) : (
-                                        <p className="overflow-hidden flex-1 pt-4 pb-4 mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                        <p className="overflow-hidden flex-1 pt-4 pb-4 mb-3 font-normal text-gray-700">
                                             La nationalité de cet auteur n'a pas
                                             été renseignée.
                                         </p>
@@ -72,7 +72,7 @@ function Author() {
                                         onClick={() =>
                                             router.push("/author/" + author.id)
                                         }
-                                        className="w-fit inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        className="w-fit inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                                     >
                                         En savoir plus
                                         <svg
@@ -118,16 +118,16 @@ function Author() {
             <div className="items-center flex flex-1">
                 <div className="flex flex-row flex-wrap gap-6 justify-center flex-1 animate-pulse">
                     {fakeAuthors.map((author) => (
-                        <div className="flex flex-col w-72 h-80 max-w-sm p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <div className="flex flex-col w-72 h-80 max-w-sm p-5 bg-white border border-gray-200 rounded-lg shadow">
                             <a href="#">
-                                <h5 className="w-44 h-11 rounded bg-gray-500 font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
+                                <h5 className="w-44 h-11 rounded bg-gray-500 font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900"></h5>
                             </a>
                             <div className="flex-1">
-                                <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
+                                <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                             </div>
                             <a className="w-32 h-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800"></a>
                         </div>
