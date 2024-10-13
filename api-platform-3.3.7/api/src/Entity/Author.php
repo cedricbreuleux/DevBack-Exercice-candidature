@@ -7,47 +7,53 @@ use ApiPlatform\Metadata\ApiFilter;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\AuthorRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ApiResource(mercure: true)]
-#[ApiFilter(SearchFilter::class, properties: ['lastName' => 'partial'])]
+
+#[ApiResource(mercure: true, normalizationContext: ['groups' => ['author:read']])]
+#[ApiFilter(SearchFilter::class, properties: ['lastName' => 'ipartial'])]
 #[ORM\Entity(repositoryClass: AuthorRepository::class)]
 class Author
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?string $firstName = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?string $lastName = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?\DateTimeInterface $birthDate = null;
 
     #[ORM\Column(length: 100, nullable: true)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?string $nationality = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?string $createdBy = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?\DateTimeInterface $createdAt = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\OneToMany(mappedBy: "author", targetEntity: Book::class)]
+    #[Groups(['author:read'])]
+    private Collection $books;
 
     public function __construct()
     {
@@ -143,8 +149,15 @@ class Author
 
         return $this;
     }
+    
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
     public function __toString(): string
     {
         return $this->firstName . ' ' . $this->lastName;
     }
+    
 }

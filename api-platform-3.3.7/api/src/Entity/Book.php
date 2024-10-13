@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Author;
 
 #[ApiResource(mercure: true, normalizationContext: ['groups' => ['book:read']])]
-#[ApiFilter(SearchFilter::class, properties: ['title' => 'partial'])]
+#[ApiFilter(SearchFilter::class, properties: ['title' => 'ipartial'])]
 #[ApiFilter(DateFilter::class, properties: ['publishedAt'])]
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book
@@ -21,19 +21,19 @@ class Book
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?string $title = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?string $summary = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?\DateTimeInterface $publishedAt = null;
 
     #[ORM\ManyToOne(targetEntity: Author::class)]
@@ -42,15 +42,15 @@ class Book
     private ?Author $author = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?string $createdBy = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?\DateTimeInterface $createdAt = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups(['book:read'])]
+    #[Groups(['book:read', 'author:read'])]
     private ?\DateTimeInterface $updatedAt = null;
 
     public function __construct()
