@@ -5,12 +5,20 @@ import Image from "next/image";
 function NavBar() {
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
+    const [ActualPage, setActualPages] = useState("book");
+    const url = router.pathname;
+
+    useEffect(() => {
+        const route = url.split('/')[1];
+        route && route !== "404" ? setActualPages(route) : null
+    }, [router])
+    
     return (
         <nav className="bg-white border-gray-20">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a
                     href="https://localhost/"
-                    className="flex items-center space-x-3 rtl:space-x-reverse"
+                    className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer"
                 >
                     <Image
                         src="/icons/Book.png"
@@ -57,8 +65,9 @@ function NavBar() {
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
                         <li>
                             <a
-                                onClick={() => router.push("/")}
-                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+                                onClick={() => {router.push("/"); setActualPages("book")}}
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 cursor-pointer"
+                                style={{ color: ActualPage === "book" ? "blue" : "inherit" }}
                                 aria-current="page"
                             >
                                 Livres
@@ -66,8 +75,9 @@ function NavBar() {
                         </li>
                         <li>
                             <a
-                                onClick={() => router.push("/author")}
-                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+                                onClick={() => {router.push("/author"); setActualPages("author")}}
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 cursor-pointer"
+                                style={{ color: ActualPage === "author" ? "blue" : "inherit" }}
                             >
                                 Auteurs
                             </a>
@@ -75,7 +85,7 @@ function NavBar() {
                         <li>
                             <a
                                 href="/admin"
-                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 cursor-pointer"
                             >
                                 Administration
                             </a>

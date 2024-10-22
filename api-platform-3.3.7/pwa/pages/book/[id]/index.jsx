@@ -12,6 +12,9 @@ function BookDetails() {
                 const response = await fetch(`https://localhost/books/${id}`);
                 const data = await response.json();
                 setBook(data);
+                if(data.status == 404) {
+                    router.push("/404")
+                }
             };
             fetchBooks();
         }

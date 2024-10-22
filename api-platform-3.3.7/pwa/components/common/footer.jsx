@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="rounded-tl-lg rounded-tr-lg pl-4 pr-4 ml-4 mr-4 shadow-[0_-4px_15px_rgba(0,0,0,0.1)] bg-beige-500">
+        <footer className="mt-4 rounded-tl-lg rounded-tr-lg pl-4 pr-4 ml-4 mr-4 shadow-[0_-4px_15px_rgba(0,0,0,0.1)] bg-beige-500">
             <div className="px-4 py-6 md:flex md:items-center md:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center">© 2024 <a href="#">BookAuthor</a>. All Rights Reserved.
                 </span>

@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 function Author() {
     const [authors, setAuthors] = useState([]);
-    const [fakeAuthors, setFakeHautors] = useState([1, 2, 3]);
+    const [fakeCards, setFakeCards] = useState([1, 2, 3]);
     const [IsResearch, setIsResearch] = useState(true);
     const [isInitialised, setIsInitialised] = useState(false);
 
@@ -40,6 +40,7 @@ function Author() {
                         <SearchBar
                             onSearchChange={SearchHautor}
                             resetSearch={() => fetchHautors("?page=1")}
+                            placeholder={"Rechercher un autheur par nom"}
                         />
                     )}
                 </div>
@@ -51,13 +52,11 @@ function Author() {
                                     key={author.id}
                                     className="flex flex-col w-72 h-80 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow"
                                 >
-                                    <a href="#">
                                         <h5 className="font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                             {author.firstName +
                                                 " " +
                                                 author.lastName}
                                         </h5>
-                                    </a>
                                     {author.nationality ? (
                                         <p className="overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700">
                                             Nationalité : {author.nationality}
@@ -68,7 +67,7 @@ function Author() {
                                             été renseignée.
                                         </p>
                                     )}
-                                    <a
+                                    <button
                                         onClick={() =>
                                             router.push("/author/" + author.id)
                                         }
@@ -90,7 +89,7 @@ function Author() {
                                                 d="M1 5h12m0 0L9 1m4 4L9 9"
                                             />
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             ))}
                         {authors.length == 0 ? (
@@ -117,11 +116,9 @@ function Author() {
             </div>
             <div className="items-center flex flex-1">
                 <div className="flex flex-row flex-wrap gap-6 justify-center flex-1 animate-pulse">
-                    {fakeAuthors.map((author) => (
+                    {fakeCards.map((author) => (
                         <div className="flex flex-col w-72 h-80 max-w-sm p-5 bg-white border border-gray-200 rounded-lg shadow">
-                            <a href="#">
                                 <h5 className="w-44 h-11 rounded bg-gray-500 font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900"></h5>
-                            </a>
                             <div className="flex-1">
                                 <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                                 <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
@@ -129,7 +126,7 @@ function Author() {
                                 <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                                 <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                             </div>
-                            <a className="w-32 h-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300"></a>
+                            <div className="w-32 h-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300"></div>
                         </div>
                     ))}
                 </div>

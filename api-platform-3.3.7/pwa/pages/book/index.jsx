@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 function Book() {
     const [books, setBooks] = useState([]);
-    const [FakeBooks, setFakeBooks] = useState([1, 2, 3]);
+    const [FakeCards, setFakeCards] = useState([1, 2, 3]);
     const [IsResearch, setIsResearch] = useState(true);
     const [isInitialised, setIsInitialised] = useState(false);
 
@@ -40,6 +40,7 @@ function Book() {
                         <SearchBar
                             onSearchChange={SearchBook}
                             resetSearch={() => fetchBooks("?page=1")}
+                            placeholder={"Rechercher un livre par titre"}
                         />
                     )}
                 </div>
@@ -51,11 +52,9 @@ function Book() {
                                     key={book.id}
                                     className="flex flex-col w-72 h-80 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow"
                                 >
-                                    <a href="#">
                                         <h5 className="font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                             {book.title}
                                         </h5>
-                                    </a>
                                     {book.summary ? (
                                         <p
                                             className="overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"
@@ -69,7 +68,7 @@ function Book() {
                                             été renseignée.
                                         </p>
                                     )}
-                                    <a
+                                    <button
                                         onClick={() =>
                                             router.push("/book/" + book.id)
                                         }
@@ -91,7 +90,7 @@ function Book() {
                                                 d="M1 5h12m0 0L9 1m4 4L9 9"
                                             />
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             ))}
                         {books.length == 0 ? (
@@ -118,14 +117,12 @@ function Book() {
             </div>
             <div className="items-center flex flex-1">
                 <div className="flex flex-row flex-wrap gap-6 justify-center flex-1 animate-pulse">
-                    {FakeBooks.map((book) => (
+                    {FakeCards.map((book) => (
                         <div
                             key={book}
                             className="flex flex-col w-72 h-80 max-w-sm p-5 bg-white border border-gray-200 rounded-lg shadow"
                         >
-                            <a href="#">
                                 <h5 className="w-44 h-11 rounded bg-gray-500 font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900"></h5>
-                            </a>
                             <div className="flex-1">
                                 <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                                 <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
@@ -133,7 +130,7 @@ function Book() {
                                 <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                                 <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                             </div>
-                            <a className="w-32 h-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300"></a>
+                            <div className="w-32 h-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300"></div>
                         </div>
                     ))}
                 </div>
