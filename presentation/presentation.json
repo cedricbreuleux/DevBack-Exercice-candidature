@@ -5,5 +5,10 @@
     "technologies": "Ce projet utilise <span class='Important-Word PrimaryColor'>Next.js</span> accompagné de <span class='Important-Word PrimaryColor'>Tailwind</span> et de <span class='Important-Word PrimaryColor'>TypeScript</span> pour la partie front-end, et <span class='Important-Word PrimaryColor'>Symfony</span> avec <span class='Important-Word PrimaryColor'>API Platform</span> pour la partie back-end. Il fonctionne avec <span class='Important-Word PrimaryColor'>Docker</span> et <span class='Important-Word PrimaryColor'>PostgreSQL</span>.",
     "fonctionnement": "Ce projet permet aux <span class='Important-Word PrimaryColor'>utilisateurs</span> de naviguer, de voir les différents <span class='Important-Word PrimaryColor'>livres</span> et <span class='Important-Word PrimaryColor'>auteurs</span> ou bien de les rechercher. Il permet également à <span class='Important-Word PrimaryColor'>l'administrateur</span> d'avoir un panneau sécurisé lui permettant d'ajouter, modifier ou supprimer les livres et les auteurs. Il y a également un <span class='Important-Word PrimaryColor'>Swagger</span> pour le développeur.",
     "liensExterne": [
+        {
+            "description": "Code source disponnible sur github.",
+            "textBtn": "Voir le code source",
+            "url": "https://github.com/cedricbreuleux/DevBack-Exercice-candidature"
+        }
     ]
 }
