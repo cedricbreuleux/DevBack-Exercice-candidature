@@ -1,5 +1,5 @@
 {
-    "titre": "SCA",
+    "titre": "My BookAuthor",
     "description": "<span class='Important-Word SecondaryColor'>Création</span> d'un site de consultation et recherche de livres et auteurs.",
     "introduction": "Ce projet est un <span class='Important-Word PrimaryColor'>test technique</span> que j'ai dû réaliser lors d'une candidature auprès d'une entreprise. C'est un site <span class='Important-Word PrimaryColor'>responsive</span> permettant la <span class='Important-Word PrimaryColor'>consultation</span> et la <span class='Important-Word PrimaryColor'>recherche</span> de livres et d'auteurs.",
     "technologies": "Ce projet utilise <span class='Important-Word PrimaryColor'>Next.js</span> accompagné de <span class='Important-Word PrimaryColor'>Tailwind</span> et de <span class='Important-Word PrimaryColor'>TypeScript</span> pour la partie front-end, et <span class='Important-Word PrimaryColor'>Symfony</span> avec <span class='Important-Word PrimaryColor'>API Platform</span> pour la partie back-end. Il fonctionne avec <span class='Important-Word PrimaryColor'>Docker</span> et <span class='Important-Word PrimaryColor'>PostgreSQL</span>.",
