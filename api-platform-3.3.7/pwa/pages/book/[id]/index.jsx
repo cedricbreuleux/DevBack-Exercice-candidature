@@ -25,7 +25,7 @@ function BookDetails() {
                         <button
                             onClick={() => router.back()}
                             type="button"
-                            className="min-w-24 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            className="min-w-24 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none"
                         >
                             Retour
                         </button>
@@ -47,13 +47,13 @@ function BookDetails() {
                     <div className="flex-1 p-10">
                         {book.summary ? (
                             <p
-                                className="justify-center flex flex-col h-full font-CrimsonTextRegular text-3xl md:text-4xl overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"
+                                className="justify-center flex flex-col h-full font-CrimsonTextRegular text-3xl md:text-4xl overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"
                                 dangerouslySetInnerHTML={{
                                     __html: book.summary,
                                 }}
                             ></p>
                         ) : (
-                            <p className="justify-center flex flex-col h-full font-CrimsonTextRegular text-3xl md:text-4xl overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            <p className="justify-center flex flex-col h-full font-CrimsonTextRegular text-3xl md:text-4xl overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700">
                                 La description de ce livre n'a pas été
                                 renseignée.
                             </p>
@@ -78,7 +78,7 @@ function BookDetails() {
                     <button
                         onClick={() => router.back()}
                         type="button"
-                        className="h-11 w-20 md:w-24 md:h-12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        className="h-11 w-20 md:w-24 md:h-12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                     >
                         Retour
                     </button>
@@ -91,7 +91,7 @@ function BookDetails() {
                     <h2 className="w-7/12 md:w-5/12 h-9 bg-white rounded font-CrimsonTextSemiBoldItalic font-custom text-4xl md:text-7xl text-center"></h2>
                 </div>
                 <div className="flex items-center flex-1 pl-8 pb-8 pr-8 animate-pulse ">
-                    <p className="justify-center flex flex-col h-full font-CrimsonTextRegular text-3xl md:text-4xl overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    <p className="justify-center flex flex-col h-full font-CrimsonTextRegular text-3xl md:text-4xl overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700">
                         <span className="bg-white rounded mb-4 w-11/12 md:w-9/12 h-4"></span>
                         <span className="bg-white rounded mb-4 w-9/12 md:w-7/12 h-4"></span>
                         <span className="bg-white rounded mb-4 w-11/12 md:9/12 h-4"></span>

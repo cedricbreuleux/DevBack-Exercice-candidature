@@ -30,7 +30,7 @@ function AuthorDedatils() {
                         <button
                             onClick={() => router.back()}
                             type="button"
-                            className="min-w-24 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            className="min-w-24 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                         >
                             Retour
                         </button>
@@ -56,22 +56,22 @@ function AuthorDedatils() {
                                 books.map((book) => (
                                     <div
                                         key={book.id}
-                                        className="flex flex-col w-72 h-80 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                                        className="flex flex-col w-72 h-80 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow"
                                     >
                                         <a href="#">
-                                            <h5 className="font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                            <h5 className="font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                                 {book.title}
                                             </h5>
                                         </a>
                                         {book.summary ? (
                                             <p
-                                                className="overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"
+                                                className="overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"
                                                 dangerouslySetInnerHTML={{
                                                     __html: book.summary,
                                                 }}
                                             ></p>
                                         ) : (
-                                            <p className="overflow-hidden flex-1 pt-4 pb-4 mb-3 font-normal text-gray-700 dark:text-gray-400">
+                                            <p className="overflow-hidden flex-1 pt-4 pb-4 mb-3 font-normal text-gray-700">
                                                 La description de ce livre n'a
                                                 pas été renseignée.
                                             </p>
@@ -80,7 +80,7 @@ function AuthorDedatils() {
                                             onClick={() =>
                                                 router.push("/book/" + book.id)
                                             }
-                                            className="w-fit inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                            className="w-fit inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                                         >
                                             En savoir plus
                                             <svg
@@ -120,7 +120,7 @@ function AuthorDedatils() {
                     <button
                         onClick={() => router.back()}
                         type="button"
-                        className="h-11 w-20 md:w-24 md:h-12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        className="h-11 w-20 md:w-24 md:h-12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                     >
                         Retour
                     </button>
@@ -139,19 +139,19 @@ function AuthorDedatils() {
                         {FakeBooks.map((book) => (
                             <div
                                 key={book}
-                                className="flex flex-col w-72 h-80 max-w-sm p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+                                className="flex flex-col w-72 h-80 max-w-sm p-5 bg-white border border-gray-200 rounded-lg shadow"
                             >
                                 <a href="#">
-                                    <h5 className="w-44 h-11 rounded bg-gray-500 font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
+                                    <h5 className="w-44 h-11 rounded bg-gray-500 font-custom mb-2 text-2xl font-bold tracking-tight text-gray-900"></h5>
                                 </a>
                                 <div className="flex-1">
-                                    <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                    <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                    <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                    <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
-                                    <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700 dark:text-gray-400"></p>
+                                    <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                    <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                    <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                    <p className="w-48 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
+                                    <p className="w-52 h-4 rounded bg-gray-500 overflow-hidden flex-1 pt-4 pb-2 mb-3 font-normal text-gray-700"></p>
                                 </div>
-                                <a className="w-32 h-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800"></a>
+                                <a className="w-32 h-8 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300"></a>
                             </div>
                         ))}
                     </div>
